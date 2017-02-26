@@ -71,7 +71,7 @@ d3.csv("mrc_table2.csv", function(error, data) {
       .on("brush", brushmove)
       .on("brushend", brushend);
 
-  var svg = d3.select("body").select("#D3_Implementation").append("svg")
+  var svg = d3.select("body").select("#D3Implementation").append("svg")
       .attr("width", size *2*n + padding)
       .attr("height", size * 2*n + padding)
     .append("g")
