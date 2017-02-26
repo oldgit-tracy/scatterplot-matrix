@@ -1,3 +1,5 @@
+var svg_x = 100;
+var svg_y = 0;
 
 var width = 960,
     size = 140,
@@ -41,13 +43,12 @@ var color = d3.scale.category10();
 
 d3.csv("mrc_table2.csv", function(error, data) {
   if (error) throw error;
-//console.log(d3.keys(data[0]))
+
   var exclude = ["name", "tier_name", "state"];
   var tierFilter = ["Nonselective four-year private not-for-profit", "Selective public", "Two-year for-profit"];
   var domainByTrait = {},
       traits = d3.keys(data[0]).filter(function(d) { return !exclude.includes(d); }),
       n = traits.length;
-//console.log(traits)
 
 
 //domain
@@ -75,7 +76,7 @@ d3.csv("mrc_table2.csv", function(error, data) {
       .attr("height", size * 2*n + padding)
     .append("g")
       .attr("transform", "translate(" + padding + "," + padding / 2 + ")")
-      .attr("transform", "translate(100, 0)");;
+      .attr("transform", "translate(" + svg_x.toString() + ", " + svg_y.toString() + ")");
 
   svg.selectAll(".x.axis")
       .data(traits)
@@ -136,6 +137,54 @@ d3.csv("mrc_table2.csv", function(error, data) {
 
         .style("fill", function(d) { return color(d.tier_name); });
   }
+
+  //legend
+  var legend_x = (size + padding) * n + 20;
+  var legend_y = 20;
+
+  var legend = svg.append("g");
+
+  legend.attr("transform", "translate(" + legend_x.toString() + ", " + legend_y.toString() + ")");
+
+  //legend title
+  legend.append("text")
+    .attr("fill", "#000")
+    .attr("font-family", "sans-serif")
+    .attr("font-size", 10)
+    .attr("font-weight", "bold")
+    .text("Tier name");
+
+  //legend box
+  var legendbox_y = 18;
+  var legend_square_size = 20;
+  var legend_square_gap = 10;
+
+  var legendbox = legend.append("g")
+    .attr("transform", "translate(0, " + legendbox_y.toString() + ")")
+    .attr("font-family", "sans-serif")
+    .attr("font-size", 10)
+    .selectAll("g")
+    .data(tierFilter)
+    .enter().append("g")
+    .attr("transform", function(d, i) {
+	                       y = i * (legend_square_size + legend_square_gap);
+						   return "translate(0," + y.toString() + ")"; });
+
+  //legend rect
+  legendbox.append("rect")
+    .attr("width", legend_square_size)
+    .attr("height", legend_square_size)
+    .attr("fill", function(d, i) {
+	                  return color(d);
+	              });
+
+  //legend text
+  var text_x = legend_square_size + 3;
+  var text_y = 10;
+  legendbox.append("text")
+    .attr("x", text_x)
+    .attr("y", text_y)
+    .text(function(d) { return d; });
 
   var brushCell;
 
