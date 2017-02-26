@@ -46,6 +46,10 @@ circle.hidden {
 
 </style>
 
+<head>
+<title>Data Visualization HW2 -- Yuanyuan Ruan</title>
+</head>
+
 <body>
 <script src="//d3js.org/d3.v3.min.js"></script>
 <script>
@@ -88,6 +92,8 @@ d3.csv("mrc_table2.csv", function(error, data) {
 
   traits.forEach(function(trait) {
     domainByTrait[trait] = d3.extent(data, function(d) { return d[trait]; });
+	domainByTrait[trait][0] *= 1;
+	domainByTrait[trait][1] *= 1.2;
   });
 
 data = data.filter(function(d){return tierFilter.includes(d.tier_name);})
