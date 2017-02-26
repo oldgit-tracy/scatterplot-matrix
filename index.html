@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 
+<html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Data Visualization HW2 -- Yuanyuan Ruan</title>
@@ -66,16 +68,112 @@ circle.hidden {
 
 </style>
 
+
+
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-  <title>Data Visualization HW2 -- Yuanyuan Ruan</title>
-  <script src="d3.js"></script>
-  <script src="//d3js.org/d3.v3.min.js"></script>
-  <script src="scrolling-nav.js"></script>
-  <script src="jquery.js"></script>
-  <script src="jquery.easing.min.js"></script>
-  <script src="bootstrap.js"></script>
-  <script src="bootstrap.min.js"></script>
-  <a href = "https://github.com/usf-cs360-2017/homework2-tracyruan007/blob/gh-pages/Trifacta%20code.png"> Trifacta Code</a>
-  <img src="Trifacta code.png", height="500", width="500">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">Data Visualization HW2 -- Yuanyuan Ruan</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a class="page-scroll" href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#Description">Description</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#Tablaue Prototype">Tablaue Prototype</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#D3 Implementation">D3 Implementation</a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Section -->
+    <section id="intro" class="intro-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Description</h1
+                      <p>This visualization tells the baseline estimates of parents’ and children’s income distributions by college in a scatterplot matrix, the data source is from Equality of Opportunity Project, Table 2: Baseline Cross-Sectional Estimates by College table from the study Mobility Report Cards: The Role of Colleges in Intergenerational Mobility by Chetty, Friedman, Saez, Turner, and Yagan (2017). </p>
+                      <p>I am focusing on two different types of datasets. I comparing the mean/median incomes between parents and kids from colleges in California filtered by the three types of colleges, such as Selective public, Nonselective for-year private not-for-profit and Two-year for-profit. Using the same filter, I visualize the pair-wise relationship among fraction female and married kids from colleges in Califonia.</p>
+                      <p>What I find interesting is the correlation in the scatterplot matrix. From the matrix, we can easily see that there is a very strong positive correlations between the mean kid incomes and median kis incomes, which the correlation is nearly equal to one. Another strong positive correlation is between mean parential incomes and median parential incomes. </p>
+                    <a class="btn btn-default page-scroll" href="#about">Click Me to Scroll Down!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Tablaue Prototype</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>D3 Implementation</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Contact Section</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/scrolling-nav.js"></script>
+
+
+
+    <script src="js/d3.js"></script>
+    <script src="//d3js.org/d3.v3.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+
 
 </body>
+
+</html>
