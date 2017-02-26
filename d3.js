@@ -1,5 +1,6 @@
+
 var width = 960,
-    size = 230,
+    size = 140,
     padding = 0;
 
 var x = d3.scale.linear()
@@ -11,20 +12,38 @@ var y = d3.scale.linear()
 var xAxis = d3.svg.axis()
     .scale(x)
     .orient("bottom")
-    .ticks(6);
+    .ticks(6)
+    .tickFormat(function (d) {
+          var prefix = d3.formatPrefix(d);
+  		if(prefix.symbol == "k"){
+  			return prefix.scale(d) + prefix.symbol;
+  		}
+  		else{
+  			return d;
+  		}
+      });
 
 var yAxis = d3.svg.axis()
     .scale(y)
     .orient("left")
-    .ticks(6);
+    .ticks(6)
+    .tickFormat(function (d) {
+          var prefix = d3.formatPrefix(d);
+  		if(prefix.symbol == "k"){
+  			return prefix.scale(d) + prefix.symbol;
+  		}
+  		else{
+  			return d;
+  		}
+      });
 
 var color = d3.scale.category10();
 
 d3.csv("mrc_table2.csv", function(error, data) {
   if (error) throw error;
 //console.log(d3.keys(data[0]))
- var exclude = ["name", "tier_name", "state"];
-  var tierFilter = ["Nonselective four-year private not-for-profit", "Selective public", "Two-year (public and private not-for-profit)"];
+  var exclude = ["name", "tier_name", "state"];
+  var tierFilter = ["Nonselective four-year private not-for-profit", "Selective public", "Two-year for-profit"];
   var domainByTrait = {},
       traits = d3.keys(data[0]).filter(function(d) { return !exclude.includes(d); }),
       n = traits.length;
@@ -32,15 +51,15 @@ d3.csv("mrc_table2.csv", function(error, data) {
 
 
 //domain
+  data = data.filter(function(d){return tierFilter.includes(d.tier_name);});
 
   traits.forEach(function(trait) {
-    domainByTrait[trait] = d3.extent(data, function(d) { return d[trait]; });
-	domainByTrait[trait][0] *= 1;
-	domainByTrait[trait][1] *= 1.2;
+    domainByTrait[trait] = d3.extent(data, function(d) { return +d[trait]; });
+	domainByTrait[trait][0] *= 0.1;
+	domainByTrait[trait][1] *= 1.1;
   });
 
-data = data.filter(function(d){return tierFilter.includes(d.tier_name);})
-console.log(data)
+  console.log(data)
   xAxis.tickSize(size * n);
   yAxis.tickSize(-size * n);
 
@@ -52,10 +71,11 @@ console.log(data)
       .on("brushend", brushend);
 
   var svg = d3.select("body").append("svg")
-      .attr("width", size * n + padding)
-      .attr("height", size * n + padding)
+      .attr("width", size *2*n + padding)
+      .attr("height", size * 2*n + padding)
     .append("g")
-      .attr("transform", "translate(" + padding + "," + padding / 2 + ")");
+      .attr("transform", "translate(" + padding + "," + padding / 2 + ")")
+      .attr("transform", "translate(100, 0)");;
 
   svg.selectAll(".x.axis")
       .data(traits)
@@ -79,11 +99,18 @@ console.log(data)
       .each(plot);
 
   // Titles for the yAxis and xAxis.
-  cell.filter(function(d) { return d.j === 0 || d.i === n-1; }).append("text")
+  // cell.filter(function(d) { return d.j === 0 || d.i === n-1; }).append("text")
+  //     .attr("x", padding)
+  //     .attr("y", padding)
+  //     .attr("dy", ".71em")
+  //     .text(function(d) { console.log(d);return d.j === 0? (d.i!==5?d.x:d.x+" / "+d.y) :d.y ;});
+
+      // Titles for the diagonal.
+  cell.filter(function(d) { return d.i === d.j; }).append("text")
       .attr("x", padding)
       .attr("y", padding)
       .attr("dy", ".71em")
-      .text(function(d) { console.log(d);return d.j === 0? (d.i!==5?d.x:d.x+" / "+d.y) :d.y ;});
+      .text(function(d) { return d.x; });
 
   cell.call(brush);
 
