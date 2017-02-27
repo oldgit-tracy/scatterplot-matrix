@@ -1,194 +1,422 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8">
-    <title>Data Visualization HW2 -- Yuanyuan Ruan</title>
-    //<link rel="stylesheet" href="style.css">
+    <title>Simple One Page Personal</title>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="Bodo - Simple One Page Personal" name="description">
+    <meta content="BdgPixel" name="author">
+    <!--Fav-->
+    <link href="images/favicon.ico" rel="shortcut icon">
 
-    <!-- Bootstrap Core CSS -->
+    <!--styles-->
     <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="owl.carousel.css" rel="stylesheet">
+    <link href="owl.theme.css" rel="stylesheet">
+    <link href="magnific-popup.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link href="responsive.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link href="scrolling-nav.css" rel="stylesheet">
+    <!--fonts google-->
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+       <script type="text/javascript" src="js/html5shiv.min.js"></script>
     <![endif]-->
-    <script src="//d3js.org/d3.v3.min.js"></script>
-</head>
+  </head>
+  <body>
 
-<style>
+    <!--HEADER -->
+    <div class="header">
 
-svg {
-  font: 10px sans-serif;
-  padding: 10px;
-}
+      <div class="menu-wrap">
+        <nav class="menu">
+          <div class="menu-list">
+            <a data-scroll="" href="#home" class="active">
+              <span>Home</span>
+            </a>
+            <a data-scroll="" href="#about">
+              <span>About</span>
+            </a>
+            <a data-scroll="" href="#homework">
+              <span>Homework</span>
+            </a>
 
-.axis,
-.frame {
-  shape-rendering: crispEdges;
-}
+            <a data-scroll="" href="#projects">
+              <span>Projects</span>
+            </a>
 
-.axis line {
-  stroke: #ddd;
-}
-
-.axis path {
-  display: none;
-}
-
-.cell text {
-  font-weight: bold;
-  text-transform: capitalize;
-}
-
-.frame {
-  fill: none;
-  stroke: #aaa;67
-}
-
-circle {
-  fill-opacity: .7;
-}
-
-circle.hidden {
-  fill: #ccc !important;
-}
-
-.extent {
-  fill: #000;
-  fill-opacity: .125;
-  stroke: #fff;
-}
-
-img {
-   width: auto;
-   max-height: 80%;
-}
-</style>
+            <a data-scroll="" href="#skill">
+              <span>Skills</span>
+            </a>
 
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+            <a data-scroll="" href="#contact">
+              <span>Contact</span>
+            </a>
+          </div>
+        </nav>
+        <button class="close-button" id="close-button">Close Menu</button>
+      </div>
+      <button class="menu-button" id="open-button">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button><!--/.for-sticky-->
+    </div>
+    <!--/.HEADER END-->
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Data Visualization HW2 -- Yuanyuan Ruan</a>
+    <!--CONTENT WRAP-->
+    <div class="content-wrap">
+      <!--CONTENT-->
+      <div class="content">
+        <!--HOME-->
+        <section id="home">
+          <div class="container">
+            <div class="row">
+              <div class="wrap-hero-content">
+                  <div class="hero-content">
+                    <h1>Hello</h1>
+                    <br>
+                    <span class="typed"></span>
+                  </div>
+              </div>
+              <div class="mouse-icon margin-20">
+                <div class="scroll"></div>
+              </div>
             </div>
+          </div>
+        </section>
+        <!--/.HOME END-->
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav">
-                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                    <li class="hidden">
-                        <a class="page-scroll" href="#page-top"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#Description">Description</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#Tableau Prototype">Tableau Prototype</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#D3Implementation">D3 Implementation</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#Contact">Contact</a>
-                    </li>
+        <!--ABOUT-->
+        <section id="about">
+          <div class="col-md-6 col-xs-12 no-pad">
+            <div class="bg-about"></div>
+          </div>
+          <div class="col-md-6 col-sm-12 col-xs-12 white-col">
+            <div class="row">
+              <!--OWL CAROUSEL2-->
+              <div class="owl-carousel2">
+                <div class="col-md-12">
+                  <div class="wrap-about">
+                    <div class="w-content">
+                      <p class="head-about">
+                        My name is Yuanyuan Ruan. I live in San Francisco. I am a senior student in data science major in Univeristy of San Francisco. I am a dream chaser, who enjoy life and challenges.
+                      </p>
+
+                      <img src="selfie.jpeg" height="500" width="1000">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12 col-sm-12 col-xs-12 white-col">
+                  <div class="row">
+                    <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12">
+                      <div class="wrap-about">
+                        <table class="w-content">
+                          <tr>
+                            <td class="title">Name </td>
+                            <td class="break">:</td>
+                            <td> M. Reza</td>
+                          </tr>
+                          <tr>
+                            <td class="title">Phone </td>
+                            <td class="break">:</td>
+                            <td> +62 8678 999 012</td>
+                          </tr>
+                          <tr>
+                            <td class="title">Email </td>
+                            <td class="break">:</td>
+                            <td> bdgpixel@gmail.com</td>
+                          </tr>
+                          <tr>
+                            <td class="title">Address </td>
+                            <td class="break">:</td>
+                            <td> Cipamokolan street 102 , Bandung, Indonesia</td>
+                          </tr>
+                          <tr>
+                            <td class="title">Skype </td>
+                            <td class="break">:</td>
+                            <td> bdgpixel</td>
+                          </tr>
+                          <tr>
+                            <td class="title">Dribbble </td>
+                            <td class="break">:</td>
+                            <td> Muh-Reza</td>
+                          </tr>
+                          <tr>
+                            <td class="title">Behance</td>
+                            <td class="break">:</td>
+                            <td> m-reza</td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--/.OWL CAROUSEL2 END-->
+            </div>
+          </div>
+        </section>
+        <!--/.ABOUT END-->
+
+        <!--HOMEWWORK-->
+        <section class="grey-bg mar-tm-10" id="homework">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3">
+                <h3 class="title-small">
+                  <span>Homework</span>
+                </h3>
+                <p class="content-detail">
+                   What I have learned in the homework in Data Visualization class: bar chart, line chart, scatterplot matrix, etc in D3 and Tableau.
+              </div>
+              <div class="col-md-9 content-right">
+                <!--PORTFOLIO IMAGE-->
+                <ul class="portfolio-image">
+                  <li class="col-md-6">
+                    <a href="https://usf-cs360-2017.github.io/homework1-tracyruan007"><img alt="image" src="multi category.tiff">
+                      <div class="decription-wrap">
+                        <div class="image-bg">
+                           <p class="desc">Homework One</p>
+                        </div>
+
+                      </div>
+                    </a>
+                  </li>
+
+
+                  <li class="col-md-6">
+                    <a href="https://usf-cs360-2017.github.io/homework2-tracyruan007"><img alt="image" src="tableau.tiff">
+                      <div class="decription-wrap">
+                        <div class="image-bg">
+                          <p class="desc">
+                            Homework Two
+                          </p>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+
 
                 </ul>
+                <!--/.PORTFOLIO IMAGE END-->
+              </div>
             </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+          </div>
+        </section>
+        <!--/.HOMEWORK END-->
 
-
-<br> <br><br> <br><br> <br>
-
-    <!-- Description Section -->
-    <section id="Description" class="Description-section">
-        <div class="container">
+        <!--PROJECTS-->
+        <section class="grey-bg mar-tm-10" id="projects">
+          <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <h1>Description</h1>
-                      <p>This visualization tells the baseline estimates of parents’ and children’s income distributions by college in a scatterplot matrix, the data source is from Equality of Opportunity Project, Table 2: Baseline Cross-Sectional Estimates by College table from the study Mobility Report Cards: The Role of Colleges in Intergenerational Mobility by Chetty, Friedman, Saez, Turner, and Yagan (2017). </p>
-                      <p>I am focusing on two different types of datasets. I comparing the mean/median incomes between parents and kids from colleges in California filtered by the three types of colleges, such as Selective public, Nonselective for-year private not-for-profit and Two-year for-profit. Using the same filter, I visualize the pair-wise relationship among fraction female and married kids from colleges in Califonia.</p>
-                      <p>What I find interesting is the correlation in the scatterplot matrix. From the matrix, we can easily see that there is a very strong positive correlations between the mean kid incomes and median kis incomes, which the correlation is nearly equal to one. Another strong positive correlation is between mean parential incomes and median parential incomes, which is close to 0.8. Moreover, parential mean and parential median have some positive correlation/ratio to kid mean, which might implies that the higher parential incomes it is, the higher chance the kids might have higher incomes as well, because they high income parents offer better quality of education to their kids.</p>
+              <div class="col-md-3">
+                <h3 class="title-small">
+                  <span>Projects</span>
+                </h3>
+                <p class="content-detail">
+                   What I have learned in the projects in Data Visualization class:  filled out later
+              </div>
+              <div class="col-md-9 content-right">
+                <!--PORTFOLIO IMAGE-->
+                <ul class="portfolio-image">
+                  <li class="col-md-6">
+                    <a href="https://usf-cs360-2017.github.io/homework1-tracyruan007"><img alt="image" src="multi category.tiff">
+                      <div class="decription-wrap">
+                        <div class="image-bg">
+                           <p class="desc">Homework One</p>
+                        </div>
+
+                      </div>
+                    </a>
+                  </li>
+
+
+                  <li class="col-md-6">
+                    <a href="https://usf-cs360-2017.github.io/homework2-tracyruan007"><img alt="image" src="tableau.tiff">
+                      <div class="decription-wrap">
+                        <div class="image-bg">
+                          <p class="desc">
+                            Homework Two
+                          </p>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+
+
+                </ul>
+                <!--/.PORTFOLIO IMAGE END-->
+              </div>
+            </div>
+          </div>
+        </section>
+        <!--/.PROJECTS END-->
+
+
+
+        <!--SKILLS-->
+        <section class="white-bg" id="skill">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3">
+                <h3 class="title-small">
+                  <span>Skills</span>
+                </h3>
+                <p class="content-detail">
+                  I have taken many mathematic classes in Data Science major:
+                  <br><br><b>Combinatorics, Math Modeling, Linear Algebra, Calculus, Differential Equations, Intro to statistics with application, Intro to probability with application, Formal Method, etc.
+                </p>
+              </div>
+              <div class="col-md-9 content-right">
+                <!--SKILLST-->
+                <div class="skillst">
+                  <div class="skillbar" data-percent="78%">
+                    <div class="title head-sm">
+                      R
+                    </div>
+                    <div class="count-bar">
+                      <div class="count"></div>
+                    </div>
+                  </div>
+
+                  <div class="skillbar" data-percent="91%">
+                    <div class="title head-sm">
+                      JavaScript in D3
+                    </div>
+                    <div class="count-bar">
+                      <div class="count"></div>
+                    </div>
+                  </div>
+
+                  <div class="skillbar" data-percent="58%">
+                    <div class="title head-sm">
+                      Python
+                    </div>
+                    <div class="count-bar">
+                      <div class="count"></div>
+                    </div>
+                  </div>
+
+                  <div class="skillbar" data-percent="63%">
+                    <div class="title head-sm">
+                      Java
+                    </div>
+                    <div class="count-bar">
+                      <div class="count"></div>
+                    </div>
+                  </div>
+
+                  <div class="skillbar" data-percent="95%">
+                    <div class="title head-sm">
+                      CSS/HTML
+                    </div>
+                    <div class="count-bar">
+                      <div class="count"></div>
+                    </div>
+                  </div>
+
+                  <div class="skillbar" data-percent="95%">
+                    <div class="title head-sm">
+                      SQL
+                    </div>
+                    <div class="count-bar">
+                      <div class="count"></div>
+                    </div>
+                  </div>
 
                 </div>
+                <!--/.SKILLST END-->
+              </div>
             </div>
-        </div>
-    </section>
+          </div>
+        </section>
+        <!--/.SKILLS END-->
 
-    <!-- Tableau Section -->
-    <section id="Tableau Prototype" class="Tableau Prototype-section">
-        <div class="container">
+
+
+        <!--CONTACT-->
+        <section id="contact" class="white-bg">
+          <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <h1>Tableau Prototype</h1>
-                    <img src="tableau.tiff">
-                </div>
+              <div class="col-md-3">
+                <h3 class="title-small">
+                  <span>Contact</span>
+                </h3>
+                <p class="content-detail">
+                  <ul>
+                    <li><p>Email: yruan2@dons.usfca.edu</p></li>
+                    <li><p>Linkedin: https://www.linkedin.com/in/tracyruan/</p></li>
+                  </ul>
+                </p>
+
+              </div>
+              <div class="col-md-9 content-right">
+                <form>
+                  <div class="group">
+                    <input required="" type="text"><span class="highlight"></span><span class="bar"></span><label>Name</label>
+                  </div>
+                  <div class="group">
+                    <input required="" type="email"><span class="highlight"></span><span class="bar"></span><label>Email</label>
+                  </div>
+                  <div class="group">
+                    <textarea required=""></textarea><span class="highlight"></span><span class="bar"></span><label>Message</label>
+                  </div>
+                  <input id="sendMessage" name="sendMessage" type="submit" value="Send Message">
+                </form>
+              </div>
             </div>
-        </div>
-    </section>
+          </div>
+        </section>
+        <!--/.CONTACT END-->
 
-<br> <br>
+        <!--FOOTER-->
+        <footer>
+          <div class="footer-top">
+            <ul class="socials">
+              <li class="facebook">
+                <a href="#" data-hover="Facebook">Facebook</a>
+              </li>
+              <li class="twitter">
+                <a href="#" data-hover="Twitter">Linkedin</a>
+              </li>
+              <li class="gplus">
+                <a href="#" data-hover="Google +">Google +</a>
+              </li>
+            </ul>
+          </div>
 
-    <!-- D3 Implementation Section -->
-    <section id="D3Implementation" class="D3 Implementation-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>D3 Implementation</h1>
-                    <script src="d3.js"></script>
-                </div>
+          <div class="footer-bottom">
+            <div class="container">
+              <div class="row">
+                <img src="images/logo-bottom.png" alt="logo bottom" class="center-block" />
+              </div>
             </div>
-        </div>
-    </section>
+          </div>
+        </footer>
+        <!--/.FOOTER-END-->
 
-    <!-- Contact Section -->
-    <section id="Contact" class="Contact-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>Contact Section</h1>
-                    <ul>
-                      <li><a href="yruan2@dons.usfca.edu">Email:yruan2@dons.usfca.edu</a></li>
-                      <li><a href="linkedin.com/in/tracyruan">LinkedIn: linkedin.com/in/tracyruan</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-<br> <br><br> <br>
-
-    <!-- jQuery -->
-    <script src="jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="bootstrap.min.js"></script>
-
-    <!-- Scrolling Nav JavaScript -->
-    <script src="jquery.easing.min.js"></script>
-    <script src="scrolling-nav.js"></script>
-    <script src="jquery.easing.min.js"></script>
+      <!--/.CONTENT END-->
+      </div>
+    <!--/.CONTENT-WRAP END-->
+    </div>
 
 
-</body>
-
+    <script src="jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="jquery.appear.js" type="text/javascript"></script>
+    <script src="bootstrap.min.js" type="text/javascript"></script>
+    <script src="classie.js" type="text/javascript"></script>
+    <script src="owl.carousel.min.js" type="text/javascript"></script>
+    <script src="jquery.magnific-popup.min.js" type="text/javascript"></script>
+    <script src="masonry.pkgd.min.js" type="text/javascript"></script>
+    <script src="masonry.js" type="text/javascript"></script>
+    <script src="smooth-scroll.min.js" type="text/javascript"></script>
+    <script src="typed.js" type="text/javascript"></script>
+    <script src="main.js" type="text/javascript"></script>
+  </body>
 </html>
